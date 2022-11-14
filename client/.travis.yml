@@ -1,0 +1,17 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+before_install:
+  - docker build -t radevt/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true USERNAME/react-test npm test
+
+
+after_success:
+  - docker build -t radevt/multi-client ./client
+  - docker build -t radevt/multi-nginx ./nginx
+  - docker build -t radevt/multi-server ./server
+  - docker build -t radevt/multi-worker ./worker
