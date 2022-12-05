@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vamos Naganqnis
+            Vamos Naganqnisdd312
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
